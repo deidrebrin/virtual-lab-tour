@@ -1,0 +1,91 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Cotsen Institute of Archaeology Virtual Lab Tour</title>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+      />
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"
+      ></script>
+      <style>
+        #panorama {
+          width: 99vw;
+          height: 95vh;
+          margin: 0;
+          padding: 0;
+        }
+
+      </style>
+    </head>
+    <body>
+      <div id="panorama"></div>
+      <script>
+        pannellum.viewer("panorama", {
+          default: {
+            firstScene: "easl",
+            // author: "Cotsen Institute of Archaeology",
+            sceneFadeDuration: 1000,
+            hotSpotDebug: true,
+          },
+
+          scenes: {
+            easl: {
+              title: "Experimental and Archaeological Sciences Lab (EASL)",
+              hfov: 110,
+              pitch: -3,
+              yaw: 117,
+              type: "equirectangular",
+              panorama: "https://pannellum.org/images/cerro-toco-0.jpg",
+              compass: false,
+              hotSpots: [
+                {
+                  pitch: -2.1,
+                  yaw: 132.9,
+                  type: "scene",
+                  text: "Exit to the Digital Archaeology Lab",
+                  sceneId: "dal",
+                },
+                {
+                  pitch: -2.1,
+                  yaw: 100,
+                  type: "info",
+                  text: "Check out our microscopes! They make things easier to see, really small things. Microscopes are cool. Micro micro micro scopey scope scope. <a href='https://dal.ucla.edu' target='_blank'>click</a><a href='https://dal.ucla.edu' target='_blank'><img src='./sloth.svg' width='200px' height='200px' /></a>",
+                },
+                {
+                  pitch: -10,
+                  yaw: 25,
+                  type: "info",
+                  text: "We have a kiln!",
+                },
+              ],
+            },
+
+            dal: {
+              title: "Digital Archaeology Lab",
+              hfov: 110,
+              yaw: 5,
+              type: "equirectangular",
+              panorama: "https://pannellum.org/images/alma.jpg",
+              hotSpots: [
+                {
+                  pitch: -0.6,
+                  yaw: 37.1,
+                  type: "scene",
+                  text: "Exit to the Experimental and Archaeological Sciences Lab",
+                  sceneId: "easl",
+                  targetYaw: -23,
+                  targetPitch: 2,
+                },
+              ],
+            },
+          },
+        });
+      </script>
+    </body>
+  </html>
+</iframe>
