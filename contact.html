@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cotsen Institute of Archaeology Virtual Lab Tour</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Load fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script>
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      function myFunction() {
+        var x = document.getElementById("cioaTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+
+    <div class="topnav" id="cioaTopnav">
+      <a class="nav" href="./index.html">About</a>
+      <a class="nav" href="./tour.html">Enter the Labs</a>
+      <a class="nav active" href="./contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="contact-page">
+      <h2>Contact</h2>
+      <h3>
+        Interested in learning more about the labs at the Cotsen Institute of
+        Archaeology? Check out the lab pages on the CIOA website
+        <a href="https://www.ioa.ucla.edu/labs">here</a>. <br />
+        Still have questions? Email us at info@ioa.ucla.edu
+      </h3>
+      <p></p>
+      <h3>
+        To support our research and education in archaeology and conservation,
+        or for more information, please contact Michelle Jacobson at
+        mjacobson@ioa.ucla.edu.
+      </h3>
+    </div>
+  </body>
+</html>
