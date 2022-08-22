@@ -1,6 +1,6 @@
 # virtual-lab-tour
 
-Explore the Cotsen Institute of Archaeology labs - virtually! This repository is the codebase for a simple virtual tour with 360 photos using Pannellum. Each lab has additional information and media provided through popups.
+Explore the UCLA Cotsen Institute of Archaeology labs - virtually! This repository is the codebase for a simple virtual tour with 360 photos using Pannellum. Each lab has additional information and media provided through popups.
 
 ## Set up your own virtual tour
 
