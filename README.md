@@ -1,21 +1,26 @@
 # virtual-lab-tour
 
-Simple virtual lab tour with 360 photos and videos using Pannellum
+Explore the Cotsen Institute of Archaeology labs - virtually! This repository is the codebase for a simple virtual tour with 360 photos using Pannellum. Each lab has additional information and media provided through popups.
 
-## Adding hotspots (informational points/links)
+## Set up your own virtual tour
 
-Turn on hotSpotDebug - this enables you to get the pitch and yaw from the console
+You can use this repository to create your own virtual tour. You'll need access to a webserver and a basic understanding of HTML & CSS but a template guide and instructions are provided in the docs directory to help you get started.
 
-## Adding scenes (new labs)
+![Landing page](./docs/landing.png)
+![Example 1](./docs/example01.png)
+![Example 2](./docs/example02.png)
 
-- Create new directory for the lab and add the 360 image along with any other items that might be displayed in the hotspots
-- Add new scene with hotspots to the tour.html file (simplest to copy one of the previous labs and edit)
-- Turn on hotSpotDebug to facilitate placing hotspots and initial view
-- Open tour.html in a web browser and confirm the 360 image is loading properly
-- Open developer tools -> console
-- Pan and move the image so that the crosshairs in the center is lined up with where you would like to place an informational hotspot or a move button. Click and copy the pitch & yaw from the console (center) into the appropriate hotspot in tour.html
-  - For informational popups, use the "info" type hotspot
-  - For move buttons, use the "scene" type hotspot
-- To set the initial view, get the appropriate pit, yaw, & hfov from the console and copy into the start of the scene object in tour.html
-- Edit the text in each hotspot (use basic html and try to keep short - you can always link to another page)
-- Save and reload to view your edits
+### Credits
+
+#### [Pannellum](https://github.com/mpetroff/pannellum)
+
+- Matthew Petroff, Original Author
+- three.js r40, Former Underlying Framework
+
+If used as part of academic research, please cite:
+
+> Petroff, Matthew A. "Pannellum: a lightweight web-based panorama viewer." Journal of Open Source Software 4, no. 40 (2019): 1628. doi:10.21105/joss.01628
+
+### Contact
+
+For additional information, contact the Digital Archaeology Lab at [dal@ioa.ucla.edu](mailto:dal@ioa.ucla.edu).
