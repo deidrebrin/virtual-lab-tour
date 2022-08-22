@@ -1,0 +1,177 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>ENTER TITLE - THIS WILL SHOW IN THE BROWSER TAB</title>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+      />
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"
+      ></script>
+      <style>
+        #panorama {
+          width: 99vw;
+          height: 95vh;
+          margin: 0;
+          padding: 0;
+        }
+        div.custom-tooltip span {
+          visibility: hidden;
+          position: absolute;
+          border-radius: 3px;
+          background-color: #000;
+          color: #fff;
+          text-align: center;
+          min-width: 300px;
+          max-width: 500px;
+          padding: 15px 15px;
+          margin-left: -220px;
+          cursor: default;
+        }
+        div.custom-tooltip a {
+          color: rgb(48, 207, 207);
+        }
+        div.custom-tooltip:hover span{
+          visibility: visible;
+        }
+        div.custom-tooltip:hover span:after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-width: 10px;
+          border-style: solid;
+          border-color: #000 transparent transparent transparent;
+          bottom: -20px;
+          left: -10px;
+          margin: 0 50%;
+          }
+      </style>
+    </head>
+    <body>
+      <div id="panorama"></div>
+      <script>
+        pannellum.viewer("panorama", {
+          default: {
+            // ENTER A SHORT NAME FOR THE FIRST SCENE YOU WANT TO LOAD
+            firstScene: "room01",
+            // YOU CAN ENTER AN AUTHOR WHICH WILL SHOW UNDER THE NAME OF THE ROOM IF DESIRED
+            author: "UCLA Library",
+            sceneFadeDuration: 1000,
+            // CHANGE THIS TO TRUE WHEN YOU NEED TO GET THE PITCH AND YAW FOR HOTSPOTS
+            hotSpotDebug: false,
+          },
+
+          scenes: {
+            // ENTER A SHORT NAME FOR EACH SCENE
+            room01: {
+              title: "Room 1",
+              // THIS IS THE INITIAL VIEW THAT WILL LOAD, USE HOTSPOTDEBUG TO GET VALUES
+              hfov: 110,
+              pitch: -3,
+              yaw: 117,
+              type: "equirectangular",
+              // ADD THE 360 IMAGE TO THE SAME FOLDER AS THIS FILE AND THEN ENTER THE FILENAME HERE
+              panorama: "./69171.jpg",
+              compass: false,
+              // USE THE EXAMPLES BELOW TO CREATE YOUR OWN HOTSPOTS
+              hotSpots: [
+                {
+                  // THIS SHOWS HOW TO CREATE THE LINKS BETWEEN SCENES
+                  pitch: -5.67,
+                  yaw: 215.74,
+                  type: "scene",
+                  text: "Exit to Room 2",
+                  sceneId: "room02",
+                },
+                {
+                  // THIS IS A SIMPLE HOTSPOT
+                  pitch: -14.97,
+                  yaw: 167.10,
+                  type: "info",
+                  "createTooltipFunc": hotspot,
+                  "createTooltipArgs": "Several hot plates and centrifuges are available for sample preparation.  These have been used most recently for the preparation of samples for starch analysis.",
+                },
+                {
+                  // THIS IS A HOTSPOT WITH AN EMBEDDED IMAGE (PUT THE IMAGE IN THE SAME FOLDER AS THIS FILE)
+                  pitch: -10.49,
+                  yaw: 146.70,
+                  type: "info",
+                  "createTooltipFunc": hotspot,
+                  "createTooltipArgs": "We have a tile cutter that can be used to sample pottery fragments to prepare thin sections.  A grinder/polisher is available for the preparation of mounted samples. <p></p> <img src='./Copy of IMG-4715.JPG' width='300px' />",
+                },
+              
+                {
+                  // THIS IS A HOTSPOT WITH LINKS AND AN IMAGE
+                  pitch: -17.39,
+                  yaw: 36.94,
+                  type: "info",
+                  "createTooltipFunc": hotspot,
+                  "createTooltipArgs": "A kiln is available for pyrotechnology experiments.  The kiln has recently been used for two research projects.  In one project, <a href='https://www.instagram.com/p/B4ynp3EpfXA/' target='_blank'>small bricks</a> were made using clay gathered from possible late Neolithic clay sources in Albania. The <a href='https://www.instagram.com/p/B7mY1_YJPbO/' target='_blank'>fired bricks</a> would be analyzed and compared to archaeological samples to aid in identifying clay sources. For another project, <a href='https://www.instagram.com/p/CIANeVPrDUB/' target='_blank'>clay test samples</a> were fired to look at the effectiveness of “green” consolidants for the stabilization of low fired pottery. <p></p> <img src='./kiln2.jpg' width='300px' />",
+                },
+                {
+                  // THIS IS A HOTSPOT WITH A VIDEO THAT HAS CONTROLS VISIBLE TO THE USER
+                  pitch: -12.76,
+                  yaw: -29.62,
+                  type: "info",
+                  "createTooltipFunc": hotspot,
+                  "createTooltipArgs": "The lab is equipped with 3 portable XRF spectrometers (Bruker Tracer SD-IIII and Tracer 5i) for the elemental analysis of cultural heritage materials. <p></p> <video width='300px' controls ><source src='./pXRF_Metal.mp4' type='video/mp4'></video>",
+                },
+              ],
+            },
+
+            room02: {
+              title: "Room 2",
+              hfov: 110,
+              yaw: 5,
+              type: "equirectangular",
+              panorama: "./360_0034.jpg",
+              hotSpots: [
+                {
+                  pitch: 0.5,
+                  yaw: -82.3,
+                  type: "scene",
+                  text: "Exit to Room 1",
+                  sceneId: "room01",
+                  targetYaw: -23,
+                  targetPitch: 2,
+                },
+                {
+                  // THIS IS A HOTSPOT WITH A VIDEO THAT IS MUTED, LOOPS AND AUTOMATICALLY STARTS PLAYING
+                  pitch: -33.01,
+                  yaw: 225.78,
+                  type: "info",
+                  "createTooltipFunc": hotspot,
+                  "createTooltipArgs": "No tour of the Digital Archaeology Lab is complete without stopping by to see our robotic vacuum Autto! He keeps the space clean and fresh with the occasional musical beep. Thank you Autto! <p></p> <video width='300px' autoplay loop muted><source src='./IMG_3167.mp4' type='video/mp4'></video>",
+                },
+                {
+                  pitch: -1.47,
+                  yaw: 242.19,
+                  type: "info",
+                  "createTooltipFunc": hotspot,
+                  "createTooltipArgs": "The Digital Archaeology Lab also organizes and hosts <a href='https://dal.ucla.edu/resources/workshops/' target='_blank'>workshops</a>. We focus on topics and tools essential to cultural heritage scholarship and strive to create a welcoming environment for everyone. The DAL staff also develops and posts <a href='https://dal.ucla.edu/resources/tutorials/' target='_blank'>tutorials</a> to our website.",
+                },
+              ],
+            },
+          },
+        });
+
+        // Hot spot creation function
+        function hotspot(hotSpotDiv, args) {
+          hotSpotDiv.classList.add('custom-tooltip');
+          var span = document.createElement('span');
+          span.innerHTML = args;
+          hotSpotDiv.appendChild(span);
+          span.style.zIndex = 1;
+          span.style.width = span.scrollWidth - 20 + 'px';
+          span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 + 'px';
+          span.style.marginTop = -span.scrollHeight - 12 + 'px';
+        }
+      </script>
+    </body>
+  </html>
+</iframe>
