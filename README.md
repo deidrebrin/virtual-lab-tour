@@ -23,4 +23,4 @@ If used as part of academic research, please cite:
 
 ### Contact
 
-For additional information, contact the Digital Archaeology Lab at [dal@ioa.ucla.edu](mailto:dal@ioa.ucla.edu).
+For additional information, contact the Digital Lab at [dal@ioa.ucla.edu](mailto:dal@ioa.ucla.edu).
